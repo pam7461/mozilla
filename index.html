@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수익이 아닌 사람을 위한 인터넷</title>
+    <style>
+        *{
+            box-sizing:border-box;
+            margin:0;
+            padding:0;
+        }
+        img{
+            width:100%;
+            vertical-align:top;
+        }
+        h1,h2,h3,h4,h5,h6{
+            font-weight:inherit;
+            font-size:inherit;
+        }
+        a{
+            color:inherit;
+            text-decoration:none;
+        }
+        ul,ol,li{
+            list-style:none;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+        :root{
+            font-family:'Noto Sans KR',sans-serif;
+            font-weight:400;
+            font-size:14px;
+            color:#111;
+            line-height:1;
+        }
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            column-gap:24px;
+        }
+
+        .wrap{
+            overflow:hidden;
+        }
+        .header{
+            border-bottom:1px solid #111;
+        }
+        .header .container{
+            max-width:1200px;
+            margin:0 auto;
+            padding:16px 24px;
+        }
+
+        nav{
+            display:none;
+        }
+
+
+
+
+        @media (min-width:768px){
+            .grid{
+                grid-template-columns:repeat(8,1fr);                
+            }
+            .header .container{
+                padding-right:48px;
+                padding-left:48px;
+            }
+            .btn-nav{
+                display:none;
+            }
+            nav{
+                display:block;
+            }
+        }
+
+
+
+
+
+        @media (min-width:1200px){
+            .grid{
+                grid-template-columns:repeat(12,1fr);                
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="wrap">
+        <header class="header">
+            <div class="container grid">
+                <h1><a href="./index.html">moz://a</a></h1>
+                <div class="btn-nav">
+                    <p>내비호출버튼</p>
+                </div>
+                <nav>
+                    내비게이션
+                </nav>
+            </div>
+        </header>
+        <section class="sec sec01">SEC01</section>
+        <section class="sec sec02">SEC02</section>
+        <section class="sec sec03">SEC03</section>
+        <section class="sec sec04">SEC04</section>
+        <footer class="footer">FOOTER</footer>
+    </section>
+</body>
+</html>
