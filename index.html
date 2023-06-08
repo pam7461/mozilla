@@ -85,6 +85,15 @@
             height:2px;
             border-radius:1px;
             background:#111;
+            transition:0.3s linear;
+        }
+        .btn-nav.close::before{
+            transform-origin:left top;
+            transform:rotate(40deg) scaleX(1.2);
+        }
+        .btn-nav.close::after{
+            transform-origin:left bottom;
+            transform:rotate(-40deg) scaleX(1.2);
         }
         .btn-nav p{
             width:24px;
@@ -93,11 +102,12 @@
             border-radius:1px;
             background:#111;
             text-indent:-9999px;
-            transition:1s;
+            transition:0.3s linear;
         }
         .btn-nav.close p{
             transform:scaleX(0);
         }
+        
         nav{
             display:none;
             flex-flow:column nowrap;
@@ -118,7 +128,10 @@
             background:transparent;
             font-size:15px;
             color:#0075c2;
-            cursor:pointer;
+            cursor:pointer;            
+        }
+        nav button.active{
+            animation:bound 0.5s 0.5s forwards;
         }
         nav button:hover{
             background:#0075c2;
@@ -137,6 +150,22 @@
         }
         .main-nav>li h2{
             padding:11px 0;
+            display:flex;
+            justify-content:space-between;
+        }
+        .main-nav>li h2::after{
+            content:'';
+            display:block;
+            width:10px;
+            height:10px;
+            border:1px solid #111;
+            border-top-color:transparent;
+            border-left-color:transparent;
+            transform:rotate(45deg);
+            transition:0.3s;
+        }
+        .main-nav>li h2.active::after{
+            transform:rotate(225deg);
         }
         .main-nav>li:last-child h2{
             padding-bottom:0;
@@ -166,6 +195,24 @@
             font-size:11px;
             padding-left:15px;
         }
+
+
+
+
+
+
+        /* ANIMATION */
+        @keyframes bound{
+            0%{transform:translateY(0)}
+            30%{transform:translateY(-20px);}
+            60%{transform:translateY(0);}
+            75%{transform:translateY(-10px);}
+            90%{transform:translateY(0);}
+            95%{transform:translateY(-5px);}
+            100%{transform:translateY(0);}
+        }
+
+
 
 
 
@@ -221,6 +268,7 @@
                 order:2;
                 width:170px;
                 margin-bottom:0;
+                animation: bound 0.5s 0.5s forwards;
             }
             .main-nav{
                 order:1;
@@ -273,6 +321,9 @@
             nav{
                 grid-column-end:13;
             }
+            nav button{
+                animation: bound 0.5s 0.5s forwards !important;
+            }
 
             .main-nav>li{
                 padding-right:26px;
@@ -305,14 +356,14 @@
         <header class="header">
             <div class="container grid">
                 <h1><a href="./index.html">moz://a</a></h1>
-                <div class="btn-nav" onclick="tglNav();">
+                <div class="btn-nav" onclick="tglNav();tglBtnNav(this);tglBtn();">
                     <p>내비호출버튼</p>
                 </div>
                 <nav>
                     <button>Firefox 다운로드</button>
                     <ul class="main-nav">
                         <li>
-                            <h2 onclick="tglSubNav();">Firebox 브라우저</h2>
+                            <h2 onclick="tglSubNav();tglH2(this);"><span>Firebox 브라우저</span></h2>
                             <ul class="sub-nav">
                                 <li>
                                     <h3>데스크톱 용 Firefox</h3>
@@ -332,9 +383,9 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><h2>제품</h2></li>
-                        <li><h2>만드는 사람들</h2></li>
-                        <li><h2>혁신</h2></li>
+                        <li><h2><span>제품</span></h2></li>
+                        <li><h2><span>만드는 사람들</span></h2></li>
+                        <li><h2><span>혁신</span></h2></li>
                     </ul>
                 </nav>
             </div>
@@ -349,12 +400,22 @@
     <script>
         let elNav = document.querySelector('nav');
         let elSubNav = document.querySelector('.sub-nav');
-        console.log(elSubNav);
+        let elBtn = document.querySelector('nav button');
+        
+        function tglBtn(){
+            elBtn.classList.toggle('active');
+        }
         function tglNav(){
             elNav.classList.toggle('active');
         }
         function tglSubNav(){
             elSubNav.classList.toggle('active');
+        }
+        function tglBtnNav(self){
+            self.classList.toggle('close');
+        }
+        function tglH2(self){
+            self.classList.toggle('active');
         }
     </script>
 </body>
