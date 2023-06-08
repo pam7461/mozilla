@@ -41,19 +41,26 @@
             grid-template-columns:repeat(4,1fr);
             column-gap:24px;
         }
+        .container{
+            max-width:1200px;
+            margin:0 auto;
+            padding:16px 24px;
+        }
 
         .wrap{
             overflow:hidden;
             height:2000px;
         }
-        .header{
+        .header{            
+            position:fixed;
+            left:0;
+            right:0;
+            top:0;
+            z-index:9999;
             border-bottom:1px solid #111;
+            background:#fff;
         }
-        .header .container{
-            max-width:1200px;
-            margin:0 auto;
-            padding:16px 24px;
-        }
+        
         .header .grid{
             row-gap:48px;
         }
@@ -196,6 +203,19 @@
             padding-left:15px;
         }
 
+        .sec01{
+            padding-top:65px;
+        }
+        .sec .grid{
+            row-gap:100px;
+        }
+        .art{
+            grid-column:1/5;
+        }
+        .art02{
+            display:none;
+        }
+
 
 
 
@@ -282,6 +302,9 @@
             .mavin-nav>li h2{
                 padding:0;
             }
+            .main-nav>li h2::after{
+                display:none;
+            }
             .sub-nav{
                 row-gap:0;
                 position:absolute;
@@ -306,6 +329,16 @@
             }
             .sub-nav p{
                 display:none;
+            }
+            .art{
+                grid-column:1/9;
+            }            
+            .art01,.art09{
+                grid-column-end:5;
+            }
+            .art02,.art10{
+                display:block;
+                grid-column-start:5;
             }
         }
 
@@ -347,7 +380,25 @@
             }    
             .sub-nav p{
                 display:block;
+            }
+            .art01,.art04,.art09{
+                grid-column:1/7;
             }      
+            .art02,.art05,.art10{
+                grid-column:7/13;
+            }
+            .art03{
+                grid-column:1/13;
+            }
+            .art06{
+                grid-column:1/5;
+            }
+            .art07{
+                grid-column:5/9;
+            }
+            .art08{
+                grid-column:9/13;
+            }
         }
     </style>
 </head>
@@ -390,10 +441,23 @@
                 </nav>
             </div>
         </header>
-        <section class="sec sec01">SEC01</section>
-        <section class="sec sec02">SEC02</section>
-        <section class="sec sec03">SEC03</section>
-        <section class="sec sec04">SEC04</section>
+        <section class="sec sec01">
+            <div class="container grid">
+                <article class="art art01">
+                    <h2>좋은 아이이어로 돌아가기 - 더 빠르게</h2>
+                    
+                </article>
+                <article class="art art02">2</article>
+                <article class="art art03">3</article>
+                <article class="art art04">4</article>
+                <article class="art art05">5</article>
+                <article class="art art06">6</article>
+                <article class="art art07">7</article>
+                <article class="art art08">8</article>
+                <article class="art art09">9</article>
+                <article class="art art10">10</article>
+            </div>
+        </section>
         <footer class="footer">FOOTER</footer>
     </section>
 
