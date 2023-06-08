@@ -204,7 +204,7 @@
         }
 
         .sec01{
-            padding-top:65px;
+            padding-top:100px;
         }
         .sec .grid{
             row-gap:100px;
@@ -214,6 +214,45 @@
         }
         .art02{
             display:none;
+        }
+        .art01 h2{
+            margin-bottom:36px;
+            font-weight:700;
+            font-size:66px;
+            text-align:center;
+        }
+        .art01 button{
+            display:block;
+            margin:0 auto;
+            border:none;
+            padding:16px;
+            background:#0075c2;
+            font-weight:500;
+            font-size:15px;
+            color:#fff;
+            cursor:pointer;
+
+        }
+        .art02 h2{
+            display:none;
+        }
+        .sec .art03{
+            padding:24px;
+            background:#f0f0f0;
+            row-gap:24px;
+        }
+        .art03 .img-box,.art03 h2,.art03 p{
+            grid-column:1/5;
+        }
+        .art03 .img-box{
+            width:320px;
+            margin:0 auto;
+        }
+        .art03 h2{
+            padding:0 48px;
+            font-weight:700;
+            font-size:36px;
+            text-align:center;
         }
 
 
@@ -271,7 +310,7 @@
             .grid{
                 grid-template-columns:repeat(8,1fr);                
             }
-            .header .container{
+            .container{
                 padding-right:48px;
                 padding-left:48px;
             }
@@ -340,6 +379,24 @@
                 display:block;
                 grid-column-start:5;
             }
+
+            .art01 h2{
+                text-align:left;
+            }
+            .art01 button{
+                margin:0;
+            }
+            .art03 .img-box{
+                margin-right:0;
+            }
+            .art03 h2,.art03 p{
+                grid-column: 5/9;
+            }
+            .art03 h2{
+                padding:0 24px;
+                font-size:42px;
+            }
+
         }
 
 
@@ -399,6 +456,18 @@
             .art08{
                 grid-column:9/13;
             }
+            .art03 .img-box{
+                grid-row:1/3;
+                grid-column:1/7;
+            }
+            .art03 h2{
+                grid-row:1/2;
+                grid-column:7/13;
+            }
+            .art03 p{
+                grid-row:2/3;
+                grid-column:7/13;
+            }
         }
     </style>
 </head>
@@ -445,10 +514,19 @@
             <div class="container grid">
                 <article class="art art01">
                     <h2>좋은 아이이어로 돌아가기 - 더 빠르게</h2>
-                    
+                    <button>새로운 Firefox 받기</button>
                 </article>
-                <article class="art art02">2</article>
-                <article class="art art03">3</article>
+                <article class="art art02">
+                    <h2>아티클</h2>
+                    <div class="img-box">
+                        <img src="./images/art01.png" alt="이미지">
+                    </div>
+                </article>
+                <article class="art art03 grid">
+                    <div class="img-box"><img src="./images/art02.svg" alt="공룡"></div>
+                    <h2>인터넷을 더 안전하고, 풍요롭고 좋은 사회로 만듭니다.</h2>
+                    <p>Mozilla는 대안 웹 브라우저인 Firefox를 만들고 있는 비영리 조직입니다. 우리는 이익이 아닌 사람들을 위해 인터넷 서비스를 제공하는 제품과 정책을 개발합니다.</p>
+                </article>
                 <article class="art art04">4</article>
                 <article class="art art05">5</article>
                 <article class="art art06">6</article>
