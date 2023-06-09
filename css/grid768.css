@@ -1,0 +1,121 @@
+@charset 'utf-8';
+@media (min-width:768px){
+    .grid{
+        grid-template-columns:repeat(8,1fr);                
+    }
+    .container{
+        padding-right:48px;
+        padding-left:48px;
+    }
+    .btn-nav{
+        display:none;
+    }
+    nav{
+        display:flex;
+        flex-flow:row nowrap;                
+        grid-row:1/2;
+        grid-column:3/9;
+    }
+    nav button{
+        order:2;
+        width:170px;
+        margin-bottom:0;
+        animation: bound 0.5s 0.5s forwards;
+    }
+    .main-nav{
+        order:1;
+        flex-flow:row nowrap;
+        align-self:center;
+    }
+    .main-nav>li{
+        border-top:none;                
+        padding-right:20px;
+    }
+    .mavin-nav>li h2{
+        padding:0;
+    }
+    .main-nav>li h2::after{
+        display:none;
+    }
+    .sub-nav{
+        row-gap:0;
+        position:absolute;
+        left:-10px;
+        top:70px;
+        width:168px;
+        border-radius:10px;
+        padding:14px;
+        background:#fff;
+        box-shadow:0 0 3px #000;
+    }
+    .sub-nav>li:nth-child(2n),.sub-nav>li:nth-child(2n+1){
+        grid-column:1/5;
+        border-bottom:1px solid #111;
+        padding:12px 0;
+    }
+    .sub-nav>li:last-child{
+        border-bottom:none;
+    }
+    .sub-nav h3{
+        margin-bottom:0;
+    }
+    .sub-nav p{
+        display:none;
+    }
+    .art{
+        grid-column:1/9;
+    }            
+    .art01,.art09{
+        grid-column-end:5;
+    }
+    .art02,.art10{
+        display:block;
+        grid-column-start:5;
+    }
+
+    .art01 h2{
+        text-align:left;
+    }
+    .art01 button{
+        margin:0;
+    }
+    .art03 .img-box{
+        margin-right:0;
+    }
+    .art03 h2,.art03 p{
+        grid-column: 5/9;
+        margin-left:0;
+    }
+    .art03 h2{
+        padding:0 24px;
+        font-size:48px;
+    }
+    .art04 h2,.art05 h2,.art10 h2{
+        font-size:48px;
+    }
+    .art06 h2,.art07 h2,.art08 h2{
+        font-size:32px;
+    }
+    .art09 .img-box{
+        width:80%;
+        margin-right:0;
+    }
+    .nav-footer>li:nth-child(2n+1){
+        grid-column:1/5;
+    }
+    .nav-footer>li:nth-child(2n){
+        grid-column:5/9;
+    }
+    .info-footer.grid form{
+        grid-row:1/3;
+        grid-column:7/9;
+    }
+    .info-footer.grid ul{
+        grid-row:1/2;
+        grid-column:1/7;
+    }
+    .info-footer.grid address{
+        grid-row:2/3;
+        grid-column:1/7;
+    }
+}
