@@ -347,6 +347,49 @@
             font-size:12px;
             text-align:center;
         }
+        .footer{
+            padding:80px 0;
+            background:#111;
+            color:#fff;
+        }
+        .footer h2 a{
+            display:block;
+            width:120px;
+            margin-bottom:24px;
+            padding:0.2em 1em;
+            background:#fff;
+            font-size:1.4em;
+            color:#111;
+            text-align:center;
+        }
+        .nav-footer.grid{
+            row-gap:48px;           
+            padding-bottom:72px;
+        }
+        .nav-footer>li{
+            grid-column:1/5;
+        }
+        .nav-footer h3{
+            position:relative;
+            font-size:1.2em;
+        }
+        .nav-footer h3::before,.nav-footer h3::after{
+            position:absolute;
+            right:0;
+            top:50%;
+            transform:translateY(-50%);
+            content:'';
+            display:block;
+            width:16px;
+            height:2px;
+            background:#fff;
+        }
+        .nav-footer h3::after{
+            transform:translateY(-50%) rotate(90deg);
+        }
+
+
+        .nav-sub-footer{display:none;}
 
 
 
@@ -389,6 +432,18 @@
                 margin-bottom:8px;
             }
             .sub-nav p{
+                display:block;
+            }
+            .nav-footer>li:nth-child(2n+1){
+                grid-column:1/3;
+            }
+            .nav-footer>li:nth-child(2n){
+                grid-column:3/5;
+            }
+            .nav-footer h3::before,.nav-footer h3::after{
+                display:none;
+            }
+            .nav-sub-footer{
                 display:block;
             }
         }
@@ -499,6 +554,12 @@
                 width:80%;
                 margin-right:0;
             }
+            .nav-footer>li:nth-child(2n+1){
+                grid-column:1/5;
+            }
+            .nav-footer>li:nth-child(2n){
+                grid-column:5/9;
+            }
         }
 
 
@@ -579,7 +640,13 @@
             .art05{                
                 padding-left:10%;                
             }
-            
+            .nav-footer.grid{
+                grid-template-columns:repeat(5,1fr);
+                border-bottom:1px solid #666;
+            }
+            .nav-footer>li{
+                grid-column:auto !important;
+            }
         }
     </style>
 </head>
@@ -690,69 +757,67 @@
         <footer class="footer">
             <div class="container">
                 <h2><a href="./index.html">moz://a</a></h2>
-                <div class="list-footer grid">
-                    <ul class="nav-footer">
-                        <li>
-                            <h3><span>회사</span></h3>
-                            <ul class="nav-sub-footer">
-                                <li><a href="#">Mozilla 선언문</a></li>
-                                <li><a href="#">보도자료</a></li>
-                                <li><a href="#">기업 블로그</a></li>
-                                <li><a href="#">채용 정보</a></li>
-                                <li><a href="#">연락처</a></li>
-                                <li><a href="#">기부</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h3><span>자료</span></h3>
-                            <ul class="nav-sub-footer">
-                                <li><a href="#">프라이버시 허브</a></li>
-                                <li><a href="#">브라우저 비교</a></li>
-                                <li><a href="#">브랜드 가이드</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h3><span>도움말</span></h3>
-                            <ul class="nav-sub-footer">
-                                <li><a href="#">제품 도움말</a></li>
-                                <li><a href="#">버그 신고</a></li>
-                                <li><a href="#">Localize Mozilla</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h3><span>개발자</span></h3>
-                            <ul class="nav-sub-footer">
-                                <li><a href="#">Developer Edition</a></li>
-                                <li><a href="#">Beta</a></li>
-                                <li><a href="#">Android 용 Beta</a></li>
-                                <li><a href="#">Nightly</a></li>
-                                <li><a href="#">Android 용 Nightly</a></li>
-                                <li><a href="#">기업용</a></li>
-                                <li><a href="#">도구</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h3><span>팔로우</span></h3>
-                            <ul class="nav-sub-footer">
-                                <li>
-                                    <h4>@Mozilla 팔라오</h4>
-                                    <a href="#">트위터</a>
-                                    <a href="#">마스토돈</a>
-                                    <a href="#">인스타그램</a>
-                                    <a href="#">링크인</a>
-                                    <a href="#">틱톡</a>
-                                    <a href="#">스포티피</a>
-                                </li>
-                                <li>
-                                    <h4>@Firefox 팔라오</h4>
-                                    <a href="#">트위터</a>                                    
-                                    <a href="#">인스타그램</a>
-                                    <a href="#">유튜브</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="nav-footer grid">
+                    <li>
+                        <h3><span>회사</span></h3>
+                        <ul class="nav-sub-footer">
+                            <li><a href="#">Mozilla 선언문</a></li>
+                            <li><a href="#">보도자료</a></li>
+                            <li><a href="#">기업 블로그</a></li>
+                            <li><a href="#">채용 정보</a></li>
+                            <li><a href="#">연락처</a></li>
+                            <li><a href="#">기부</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><span>자료</span></h3>
+                        <ul class="nav-sub-footer">
+                            <li><a href="#">프라이버시 허브</a></li>
+                            <li><a href="#">브라우저 비교</a></li>
+                            <li><a href="#">브랜드 가이드</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><span>도움말</span></h3>
+                        <ul class="nav-sub-footer">
+                            <li><a href="#">제품 도움말</a></li>
+                            <li><a href="#">버그 신고</a></li>
+                            <li><a href="#">Localize Mozilla</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><span>개발자</span></h3>
+                        <ul class="nav-sub-footer">
+                            <li><a href="#">Developer Edition</a></li>
+                            <li><a href="#">Beta</a></li>
+                            <li><a href="#">Android 용 Beta</a></li>
+                            <li><a href="#">Nightly</a></li>
+                            <li><a href="#">Android 용 Nightly</a></li>
+                            <li><a href="#">기업용</a></li>
+                            <li><a href="#">도구</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><span>팔로우</span></h3>
+                        <ul class="nav-sub-footer">
+                            <li>
+                                <h4>@Mozilla 팔라오</h4>
+                                <a href="#">트위터</a>
+                                <a href="#">마스토돈</a>
+                                <a href="#">인스타그램</a>
+                                <a href="#">링크인</a>
+                                <a href="#">틱톡</a>
+                                <a href="#">스포티피</a>
+                            </li>
+                            <li>
+                                <h4>@Firefox 팔라오</h4>
+                                <a href="#">트위터</a>                                    
+                                <a href="#">인스타그램</a>
+                                <a href="#">유튜브</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
                 <div class="info-footer grid">
                     <form action="#" method="get">
                         <label for="lang">언어</label>
