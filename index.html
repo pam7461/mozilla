@@ -372,6 +372,7 @@
         .nav-footer h3{
             position:relative;
             font-size:1.2em;
+            cursor:pointer;
         }
         .nav-footer h3::before,.nav-footer h3::after{
             position:absolute;
@@ -383,13 +384,78 @@
             width:16px;
             height:2px;
             background:#fff;
+            transition:0.3s;
         }
         .nav-footer h3::after{
             transform:translateY(-50%) rotate(90deg);
         }
-
-
-        .nav-sub-footer{display:none;}
+        .nav-footer h3.active::before{
+            transform:translateY(-50%) rotate(45deg);
+        }
+        .nav-footer h3.active::after{
+            transform:translateY(-50%) rotate(135deg);
+        }
+        .nav-sub-footer{
+            display:none;            
+            padding-top:24px;
+        }
+        .nav-sub-footer li{
+            padding:8px 0;
+        }
+        .nav-sub-footer a:hover{
+            text-decoration:underline;
+        }
+        .follow h3{
+            display:none;
+        }
+        .follow .nav-sub-footer{
+            display:block;
+            padding-top:0;
+        }
+        .follow li{
+            display:flex;
+            flex-flow:row wrap;            
+        }
+        .follow h4{
+            width:100%;
+            margin-bottom:6px;
+        }
+        .follow a{
+            display:block;
+            width:16px;
+            height:16px;
+            overflow:hidden;
+            text-indent:-9999px;
+            background-image:url('./images/icon-set.png');            
+            background-size:300%;
+        }
+        .mozilla-follow a:nth-of-type(1){
+            background-position:320px 0;
+        }
+        .mozilla-follow a:nth-of-type(2){
+            background-position:640px 0;
+        }
+        .mozilla-follow a:nth-of-type(3){
+            background-position:0 320px;
+        }
+        .mozilla-follow a:nth-of-type(4){
+            background-position:320px 320px;
+        }
+        .mozilla-follow a:nth-of-type(5){
+            background-position:640px 320px;
+        }
+        .mozilla-follow a:nth-of-type(6){
+            background-position:0 640px;
+        }
+        .firefox-follow a:nth-of-type(1){
+            background-position:320px 0;
+        }
+        .firefox-follow a:nth-of-type(2){
+            background-position:0 320px;
+        }
+        .firefox-follow a:nth-of-type(3){
+            background-position:640px 640px;
+        }
 
 
 
@@ -759,7 +825,7 @@
                 <h2><a href="./index.html">moz://a</a></h2>
                 <ul class="nav-footer grid">
                     <li>
-                        <h3><span>회사</span></h3>
+                        <h3 onclick="tglH3(this);"><span>회사</span></h3>
                         <ul class="nav-sub-footer">
                             <li><a href="#">Mozilla 선언문</a></li>
                             <li><a href="#">보도자료</a></li>
@@ -797,10 +863,10 @@
                             <li><a href="#">도구</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="follow">
                         <h3><span>팔로우</span></h3>
                         <ul class="nav-sub-footer">
-                            <li>
+                            <li class="mozilla-follow">
                                 <h4>@Mozilla 팔라오</h4>
                                 <a href="#">트위터</a>
                                 <a href="#">마스토돈</a>
@@ -809,7 +875,7 @@
                                 <a href="#">틱톡</a>
                                 <a href="#">스포티피</a>
                             </li>
-                            <li>
+                            <li class="firefox-follow">
                                 <h4>@Firefox 팔라오</h4>
                                 <a href="#">트위터</a>                                    
                                 <a href="#">인스타그램</a>
@@ -869,6 +935,9 @@
             self.classList.toggle('close');
         }
         function tglH2(self){
+            self.classList.toggle('active');
+        }
+        function tglH3(self){
             self.classList.toggle('active');
         }
     </script>
